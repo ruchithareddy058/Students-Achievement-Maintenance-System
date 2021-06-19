@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login Page</title>
+	<link rel="stylesheet" href="{% static 'styl.css' %}">
+	<link rel="stylesheet" href="{% static 'profile.png' %}">
+</head>
+<body>
+	<center><h3 style="color: white">STUDENTS ACHIEVEMENT MAINTENANCE SYSTEM</h3></center>
+	<div class='box'>
+		<img src="{% static 'profile.png' %}" alt="" class="dp">
+		<h2>Login</h2>
+		<form method=POST action="{%url 'main1'%}">
+			{% csrf_token %}
+			<div class="inputBox">
+				<input type="text" name="uname" value="{{cookie3}}" required="">
+				<label>User name</label>
+			</div>
+			<div class="inputBox">
+				<input type="password" name="password" value="{{cookie4}}" required="">
+				<label>Password</label>
+			</div>
+			<input type="checkbox" name="remember"> <b>Remember me </b>
+            <span class="psw"> <b>Forgot</b> <a href="#"> password?</a></span>
+			<input type="submit" name="" value="Login">
+			<h3>Don't have an account?  <a href="{% url 'facregister' %}">       Create</a></h3>
+			<div class="msg">
+			{% if messages %}
+			{%for message in messages%}
+			<h3>{{message}}</h3>
+			{% endfor %}
+			{% endif %}
+		    </div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registration Details</title>
+	<link rel="stylesheet" href="{% static 'style2.css' %}">
+</head>
+<body>
+<center><h3 style="color: #791C62">STUDENTS ACHIEVEMENT MAINTENANCE SYSTEM</h3></center>
+<h2>Please enter your personal details </h2>
+<form method="POST">
+{% csrf_token %}
+<table align="center" cellpadding = "10">
+
+<tr>
+<td>Name</td>
+<td><input type="text" name="name" maxlength="50" placeholder="" />
+
+</td>
+</tr>
+
+<tr>
+<td>Registered Number</td>
+<td><input type="text" name="registered_number" maxlength="50" placeholder=""/>
+</td>
+</tr>
+
+<tr>
+<td>Branch</td>
+<td><input type="text" name="branch" maxlength="50" placeholder=""/>
+</td>
+</tr>
+
+<tr>
+<td>Section</td>
+<td><input type="Number" name="section" maxlength="50" placeholder=""/>
+</td>
+</tr>
+
+<tr>
+<td>Email ID</td>
+<td><input type="email" name="mail" maxlength="100" placeholder=""/></td>
+</tr>
+<tr>
+<td>Domain mail ID</td>
+<td><input type="email" name="domain_mail" maxlength="100" placeholder=""/></td>
+</tr>
+
+<tr>
+<td>Mobile Number</td>
+<td>
+<input type="text" name="mobile_number" maxlength="50" placeholder=""/>
+
+</td>
+</tr>
+
+<tr>
+<td>Aadhar Number:</td>
+<td>
+<input type="text" name="aadhar_number" maxlength="50" placeholder=""/>
+
+</td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="gender" value="Male" required="" />
+Male
+<input type="radio" name="gender" value="Female" required="" />
+Female
+</td>
+</tr>
+
+<tr>
+<td>Date of Birth(DOB)</td>
+<td>
+<input type="date" name="dob" placeholder="" required="" /></td>
+</tr>
+
+<tr>
+<td>Address<br /><br /><br /></td>
+<td><textarea name="address" rows="8" cols="50" placeholder=""></textarea></td>
+</tr>
+
+<tr>
+<td>City</td>
+<td><input type="text" name="city" maxlength="50" placeholder=""/>
+
+</td>
+</tr>
+<tr>
+<td>Pin Code</td>
+<td><input type="text" name="pincode" maxlength="6" placeholder=""/>
+
+</td>
+</tr>
+
+<tr>
+<td>State</td>
+<td><input type="text" name="state" maxlength="50" placeholder=""/>
+
+</td>
+</tr>
+
+<tr>
+<td>Country</td>
+<td><input type="text" name="country" placeholder="" /></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Upload">
+<a href="{% url 'dashboard2' s%}"><input type="button" value="Next"></a>
+</td>
+</tr>
+
+</table>
+</form>
+{% if messages %}
+{%for message in messages%}
+<h3 style="text-align: center">{{message}}</h3>
+{% endfor %}
+{% endif %}
+</body>
+</html>
+
+

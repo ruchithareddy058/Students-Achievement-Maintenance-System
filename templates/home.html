@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Home Page</title>
+	<link rel="stylesheet" href="{% static 'style5.css' %}">
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+		<div class="logo">
+			<img src="{% static 'logo.jpg' %}" alt="">
+		</div>
+			<ul class="nav-area">
+				<li><a href="{% url 'login' %}">Student</a></li>
+				<li><a href="{% url 'login1' %}">Faculty</a></li>
+				<li><a href="{% url 'login1' %}">Company</a></li>
+			</ul>
+		</div>
+		<div class="welcome">
+			<h1>STUDENTS ACHIEVEMENT MAINTENANCE SYSTEM</h1>
+		</div>
+	</header>
+</body>
+</html>

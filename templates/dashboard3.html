@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Documents</title>
+	<link rel="stylesheet" href="{% static 'styl3.css' %}">
+</head>
+<body>
+	<center><h3 style="color: #791C62">STUDENTS ACHIEVEMENT MAINTENANCE SYSTEM</h3></center>
+	<h2>Please upload your documents!</h2>
+<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+<table align="center" cellpadding = "30">
+
+<tr>
+<td>Registered Number</td>
+<td>
+	<select name="registered_no">
+		{% for i in data2 %}
+		<option>{{i.registered_number}}</option>
+		{%endfor%}
+	</select>
+</td>
+</tr>
+<tr>
+<td>Document Title</td>
+<td>
+<input list="document" name="document_type" id="document_type" required="">
+<datalist id="document">
+<option value="class10 marksheet"></option>
+<option value="class12 marksheet"></option>
+<option value="Btech sem 1-1 marksheet"></option>
+<option value="Btech sem 1-2 marksheet"></option>
+<option value="Btech sem 2-1 marksheet"></option>
+<option value="Btech sem 2-2 marksheet"></option>
+<option value="Btech sem 3-1 marksheet"></option>
+<option value="Btech sem 3-2 marksheet"></option>
+<option value="Btech sem 4-1 marksheet"></option>
+<option value="Btech sem 4-2 marksheet"></option>
+<option value="Resume"></option>
+<option value="other"></option>
+</datalist>
+</td></tr>
+<tr>
+<td>Document</td>
+<td><input type="file" name="doc" id="doc" required=""></td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+<a href="{% url 'dashboard2' s%}"><input type="button" value="Back"></a>
+<input type="submit" value="Upload">
+<a href="{% url 'dashboard0' s%}"><input type="button" value="Home"></a>
+</td>
+</tr>
+</table>
+</form>
+{% if messages %}
+{%for message in messages%}
+<h3 style="text-align: center">{{message}}</h3>
+{% endfor %}
+{% endif %}
+</body>
+</html>

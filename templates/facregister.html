@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Register Page</title>
+	<link rel="stylesheet" href="{% static 'mystyle2.css' %}">
+	<link rel="stylesheet" href="{% static 'profile.png' %}">
+</head>
+<body>
+	<br><br><br><h4 style="color: black; margin-left:370px">STUDENTS ACHIEVEMENT MAINTENANCE SYSTEM</h4>
+	<div class='box'>
+		<img src="{% static 'profile.png' %}" alt="" class="dp">
+		<h2>Register</h2>
+		<form method="POST">
+			{% csrf_token %}
+			<div class="inputBox">
+				<input type="text" name="uname" required="">
+				<label>User name</label>
+			</div>
+			<div class="inputBox">
+				<input type="email" name="email" required="">
+				<label>Email Address</label>
+			</div>
+			<div class="inputBox">
+				<input type="password" name="password" required="">
+				<label>Password</label>
+			</div>
+			<input type="submit" name="" value="Register">
+			<h3>Click here to <a href="{%url 'login1'%}" style="color: #8ACC8D;">Relogin</a></h3>
+			<div class="msg">
+			{% if messages %}
+			{%for message in messages%}
+			<h3>{{message}}</h3>
+			{% endfor %}
+			{% endif %}
+		    </div>
+		</form>
+	</div>
+</body>
+</html>

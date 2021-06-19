@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registration Details</title>
+	<link rel="stylesheet" href="{% static 'style2.css' %}">
+</head>
+<body>
+<center><h3 style="color: #791C62">STUDENTS ACHIEVEMENT MAINTENANCE SYSTEM</h3></center>
+	<h2>Please enter your academic details</h2>
+	<form method="POST">
+		{% csrf_token %}
+<table align="center" cellpadding = "10">
+
+<tr>
+<td>Registered Number</td>
+<td>
+	<select name="reg_no">
+		{% for i in data1 %}
+		<option>{{i.registered_number}}</option>
+		{%endfor%}
+	</select>
+</td>
+</tr>
+
+<tr>
+<td>10th score</td>
+<td><input type="text" name="tenth_score" maxlength="50"  />
+
+</td>
+</tr>
+<tr>
+<td>12th score</td>
+<td><input type="text" name="intermediate_score" maxlength="50"  />
+
+</td>
+</tr>
+
+<tr>
+<td>Btech score</td>
+<td><input type="text" name="btech_score" maxlength="50"  />
+
+</td>
+</tr>
+
+<tr>
+<td>Number of backlogs</td>
+<td><input type="text" name="backlogs" maxlength="50"  />
+
+</td>
+</tr>
+
+<tr>
+<td>1-1 SGPA</td>
+<td><input type="text" name="one_one_SGPA" maxlength="50"  />
+
+</td>
+</tr>
+
+<tr>
+<td>1-2 SGPA</td>
+<td><input type="text" name="one_two_SGPA" maxlength="50"  />
+
+</td>
+</tr>
+
+<tr>
+<td>2-1 SGPA</td>
+<td><input type="text" name="two_one_SGPA" maxlength="50"  />
+
+</td>
+</tr>
+
+<tr>
+<td>2-2 SGPA</td>
+<td><input type="text" name="two_two_SGPA" maxlength="50"  />
+
+</td>
+</tr>
+
+
+<tr>
+<td>3-1 SGPA</td>
+<td><input type="text" name="three_one_SGPA" maxlength="50"  />
+
+</td>
+</tr>
+
+<tr>
+<td>3-2 SGPA</td>
+<td><input type="text" name="three_two_SGPA" maxlength="50"  />
+
+</td>
+</tr>
+
+<tr>
+<td>4-1 SGPA</td>
+<td><input type="text" name="four_one_SGPA" maxlength="50"  />
+
+</td>
+</tr>
+
+<tr>
+<td>4-2 SGPA</td>
+<td><input type="text" name="four_two_SGPA" maxlength="50"  />
+
+</td>
+</tr>
+
+
+<tr>
+<td>Certifications<br /><br /><br /></td>
+<td><textarea name="certifications" rows="8" cols="50" placeholder=""></textarea></td>
+</tr>
+
+<tr>
+<td>Workshops<br /><br /><br /></td>
+<td><textarea name="workshops" rows="8" cols="50" placeholder=""></textarea></td>
+</tr>
+
+
+<tr>
+<td>Mini Projects<br /><br /><br /></td>
+<td><textarea name="mini_projects" rows="8" cols="50" placeholder=""></textarea></td>
+</tr>
+
+
+<tr>
+<td>Projects<br /><br /><br /></td>
+<td><textarea name="projects" rows="8" cols="50" placeholder=""></textarea></td>
+</tr>
+
+
+<tr>
+<td>Job internships<br /><br /><br /></td>
+<td><textarea name="job_internships" rows="8" cols="50" placeholder=""></textarea></td>
+</tr>
+
+
+<tr>
+<td colspan="2" align="center">
+<a href="{% url 'dashboard1' s%}"><input type="button" value="Back"></a>
+<input type="submit" value="Upload">
+<a href="{% url 'dashboard3' s%}"><input type="button" value="Next"></a>
+</td>
+</tr>
+</table>
+</form>
+{% if messages %}
+{%for message in messages%}
+<h3 style="text-align: center">{{message}}</h3>
+{% endfor %}
+{% endif %}
+</body>
+</html>

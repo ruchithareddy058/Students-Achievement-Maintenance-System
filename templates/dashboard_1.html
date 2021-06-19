@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registration Details</title>
+	<link rel="stylesheet" href="{% static 'styl7.css' %}">
+</head>
+<body>
+<center><h3 style="color: #083A7B">STUDENTS ACHIEVEMENT MAINTENANCE SYSTEM</h3></center>
+<h2>Student personal details!</h2>
+<form method="POST">
+{% csrf_token %}
+<table align="center" cellpadding = "15">
+<tr>
+<td>Name</td>
+<td>{{s.name}}</td>
+</tr>
+<tr><td>Registered Number</td>
+<td>{{s.registered_number}}</td></tr>
+<tr><td>Branch</td>
+<td>{{s.branch}}</td></tr>
+<tr><td>Section</td>
+<td>{{s.section}}</td></tr>
+<tr><td>Email ID</td>
+<td>{{s.mail}}</td></tr>
+<tr><td>Domain mail ID</td>
+<td>{{s.domain_mail}}</td></tr>
+<tr><td>Mobile Number</td>
+<td>{{s.mobile_number}}</td></tr>
+<tr><td>Aadhar Number</td>
+<td>{{s.aadhar_number}}</td></tr>
+<tr><td>Gender</td>
+<td>{{s.gender}}</td></tr>
+<tr><td>Date of Birth(DOB)</td>
+<td>{{s.dob}}</td></tr>
+<tr><td>Address</td>
+<td>{{s.address}}</td></tr>
+<tr><td>City</td>
+<td>{{s.city}}</td></tr>
+<tr><td>Pin Code</td>
+<td>{{s.pincode}}</td></tr>
+<tr><td>State</td>
+<td>{{s.state}}</td></tr>
+<tr><td>{{s.country}}</td>
+<td>India</td></tr>
+<tr>
+<td colspan="2" align="center">
+<a href="{% url 'dashboard_2' s.registered_number %}"><input type="button" value="Next"></a>
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+

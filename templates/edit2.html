@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registration Details</title>
+	<link rel="stylesheet" href="{% static 'style2.css' %}">
+</head>
+<body>
+	<h2>Please enter your academic details</h2>
+	<form method="POST" action="{%url 'update2' s.reg_no.registered_number%}">
+		{% csrf_token %}
+<table align="center" cellpadding = "10">
+
+<tr>
+<td>Registered Number</td>
+<td>
+<input type="text" name="reg_no" maxlength="50" value="{{s.reg_no.registered_number}}">
+</td>
+</tr>
+
+<tr>
+<td>10th score</td>
+<td><input type="text" name="tenth_score" maxlength="50" value="{{s.tenth_score}}" />
+
+</td>
+</tr>
+<tr>
+<td>12th score</td>
+<td><input type="text" name="intermediate_score" maxlength="50" value="{{s.intermediate_score}}"  />
+
+</td>
+</tr>
+
+<tr>
+<td>Btech score</td>
+<td><input type="text" name="btech_score" maxlength="50" value="{{s.btech_score}}" />
+
+</td>
+</tr>
+
+<tr>
+<td>Number of backlogs</td>
+<td><input type="text" name="backlogs" maxlength="50"  value="{{s.backlogs}}"/>
+
+</td>
+</tr>
+
+<tr>
+<td>1-1 SGPA</td>
+<td><input type="text" name="one_one_SGPA" maxlength="50" value="{{s.one_one_SGPA}}" />
+
+</td>
+</tr>
+
+<tr>
+<td>1-2 SGPA</td>
+<td><input type="text" name="one_two_SGPA" maxlength="50" value="{{s.one_two_SGPA}}" />
+
+</td>
+</tr>
+
+<tr>
+<td>2-1 SGPA</td>
+<td><input type="text" name="two_one_SGPA" maxlength="50"  value="{{s.two_one_SGPA}}"/>
+
+</td>
+</tr>
+
+<tr>
+<td>2-2 SGPA</td>
+<td><input type="text" name="two_two_SGPA" maxlength="50"  value="{{s.two_two_SGPA}}"/>
+
+</td>
+</tr>
+
+
+<tr>
+<td>3-1 SGPA</td>
+<td><input type="text" name="three_one_SGPA" maxlength="50" value="{{s.three_one_SGPA}}" />
+
+</td>
+</tr>
+
+<tr>
+<td>3-2 SGPA</td>
+<td><input type="text" name="three_two_SGPA" maxlength="50" value="{{s.three_two_SGPA}}" />
+
+</td>
+</tr>
+
+<tr>
+<td>4-1 SGPA</td>
+<td><input type="text" name="four_one_SGPA" maxlength="50" value="{{s.four_one_SGPA}}" />
+
+</td>
+</tr>
+
+<tr>
+<td>4-2 SGPA</td>
+<td><input type="text" name="four_two_SGPA" maxlength="50"  value="{{s.four_two_SGPA}}"/>
+
+</td>
+</tr>
+
+
+<tr>
+<td>Certifications<br /><br /><br /></td>
+<td><textarea name="certifications" rows="8" cols="50" value="{{s.certifications}}"></textarea></td>
+</tr>
+
+<tr>
+<td>Workshops<br /><br /><br /></td>
+<td><textarea name="workshops" rows="8" cols="50" value="{{s.workshops}}"></textarea></td>
+</tr>
+
+
+<tr>
+<td>Mini Projects<br /><br /><br /></td>
+<td><textarea name="mini_projects" rows="8" cols="50" value="{{s.mini_projects}}"></textarea></td>
+</tr>
+
+
+<tr>
+<td>Projects<br /><br /><br /></td>
+<td><textarea name="projects" rows="8" cols="50" value="{{s.projects}}"></textarea></td>
+</tr>
+
+
+<tr>
+<td>Job internships<br /><br /><br /></td>
+<td><textarea name="job_internships" rows="8" cols="50" value="{{s.job_internships}}"></textarea></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Update">
+</td>
+</tr>
+
+</table>
+</form>
+</body>
+</html>

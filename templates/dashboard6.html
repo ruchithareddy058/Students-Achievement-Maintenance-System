@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Student Details</title>
+	<link rel="stylesheet" href="{% static 'mstyle1.css' %}">
+</head>
+<body>
+<center><h3 style="color: #083A7B">STUDENTS ACHIEVEMENT MAINTENANCE SYSTEM</h3></center>
+<h2>List of your documnets!</h2>
+<table class="t" border=1 align="center" cellpadding="15">
+<tr>
+    <th>Document Name</th>
+    <th>Document</th>
+    <th>Download</th>
+    <th>Delete</th>
+ </tr>
+ {%for i in s%}
+ <tr>
+ 	<td>{{i.document_type}}</td>
+ 	<td><a href="{{i.doc.url}}">{{i.doc}}</a></td>
+ 	<td><a href="{{i.doc.url}}" download ><button id="download">Download</button></a></td>
+ 	<td>
+ 		 <form method="post" action="{% url 'delete' u.registered_number i.document_type %}">
+              {% csrf_token %}
+              <button type="submit" id="delete">Delete</button>
+            </form>
+ 	</td>
+ </tr>
+ {%endfor%}
+ <tr>
+<td colspan="4" align="center">
+<a href="{% url 'dashboard5' u.registered_number %}"><input type="button" value="Back"></a>
+<a href="{% url 'dashboard0' u.registered_number%}"><input type="button" value="Home"></a>
+</td>
+</tr>
+</table>
+</body>
+</html>

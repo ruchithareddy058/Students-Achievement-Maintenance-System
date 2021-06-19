@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registration Details</title>
+	<link rel="stylesheet" href="{% static 'styl7.css' %}">
+</head>
+<body>
+<center><h3 style="color: #083A7B">STUDENTS ACHIEVEMENT MAINTENANCE SYSTEM</h3></center>
+	<h2>Student academic details!</h2>
+	<form method="POST">
+		{% csrf_token %}
+<table class='t' align="center" cellpadding = "20">
+
+<tr>
+<td>10th score</td>
+<td>
+{{s.tenth_score}}
+</td>
+</tr>
+<tr>
+<td>12th score</td>
+<td>
+{{s.intermediate_score}}
+</td>
+</tr>
+
+<tr>
+<td>Btech score</td>
+<td>{{s.btech_score}}
+</td>
+</tr>
+
+<tr>
+<td>Number of backlogs</td>
+<td>
+{{s.backlogs}}
+</td>
+</tr>
+
+<tr>
+<td>1-1 SGPA</td>
+<td>
+{{s.one_one_SGPA}}
+</td>
+</tr>
+
+<tr>
+<td>1-2 SGPA</td>
+<td>
+{{s.one_two_SGPA}}
+</td>
+</tr>
+
+<tr>
+<td>2-1 SGPA</td>
+<td>
+{{s.two_one_SGPA}}
+</td>
+</tr>
+
+<tr>
+<td>2-2 SGPA</td>
+<td>
+{{s.two_two_SGPA}}
+</td>
+</tr>
+
+
+<tr>
+<td>3-1 SGPA</td>
+<td>
+{{s.three_one_SGPA}}
+</td>
+</tr>
+
+<tr>
+<td>3-2 SGPA</td>
+<td>
+{{s.three_two_SGPA}}
+</td>
+</tr>
+
+<tr>
+<td>4-1 SGPA</td>
+<td>
+{{s.four_one_SGPA}}
+</td>
+</tr>
+
+<tr>
+<td>4-2 SGPA</td>
+<td>
+{{s.four_two_SGPA}}
+</td>
+</tr>
+
+
+<tr>
+<td>Certifications</td>
+<td>
+{{s.certifications}}	
+</td>
+</tr>
+
+<tr>
+<td>Workshops</td>
+<td>
+{{s.workshops}}
+</td>
+</tr>
+
+
+<tr>
+<td>Mini Projects</td>
+<td>
+{{s.mini_projects}}
+</td>
+</tr>
+
+
+<tr>
+<td>Projects</td>
+<td>
+{{s.projects}}
+</td>
+</tr>
+
+
+<tr>
+<td>Job internships</td>
+<td>
+{{s.job_internships}}
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2" align="center">
+<a href="{% url 'dashboard_1' s.reg_no.registered_number %}"><input type="button" value="Back"></a>
+<a href="{% url 'dashboard_3' s.reg_no.registered_number %}"><input type="button" value="Next"></a>
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

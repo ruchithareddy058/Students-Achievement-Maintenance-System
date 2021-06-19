@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Student Details</title>
+	<link rel="stylesheet" href="{% static 'mystyle.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<nav class="navbar">
+<ul>
+	<li><a href="" style="margin-right:300px; pointer-events: none">STUDENTS ACHIEVEMENT MAINTENANCE SYSTEM</a></li>
+	<li><a href="{% url 'dashboardz' %}">Home</a></li>
+</ul>		
+</nav>
+<form class="search" method="get" action="/search">
+	<input type="text" name="search"  placeholder="search by registered number or name">
+	<button type="submit"><i class="fa fa-search"></i></button>
+</form>
+<table border=1 align="center" cellpadding="10">
+<tr>
+    <th>Registered number</th>
+    <th>Name</th>
+    <th>CGPA</th>
+    <th>No of backlogs</th>
+    <th>Click here</th>
+ </tr>
+ {% for i in d %}
+ <tr>
+ 	<td>{{i.reg_no.registered_number}}</td>
+ 	<td>{{i.reg_no.name}}</td>
+ 	<td>{{i.btech_score}}</td>
+ 	<td>{{i.backlogs}}</td>
+ 	<td><a href="{% url 'dashboard_1' i.reg_no.registered_number %}" style="color: black">About</a></td>
+ </tr>
+ {%endfor%}
+</table>
+
+</body>
+</html>

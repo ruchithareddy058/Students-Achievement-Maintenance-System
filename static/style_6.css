@@ -1,0 +1,69 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.wrapper{
+	background: url(bcg.PNG) no-repeat;
+	background-size: cover;
+	height: 100vh;
+}
+.navbar{
+	position: fixed;
+	height: 30px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.4);
+	background-color: black;
+}
+.navbar ul{
+	float: right;
+	margin-right: 20px;
+	margin-top: -2%; 
+}
+.navbar ul li{
+	list-style: none;
+	margin: 0 8px;
+	display: inline-block;
+	line-height: 80px;
+}
+.navbar ul li a{
+	font-size: 15px;
+	font-weight: bold;
+	font-family: sans-serif;
+	color: white;
+	padding: 6px 5px;
+	text-decoration: none;
+	transition: .4s;
+}
+.navbar ul li a.active,
+.navbar ul li a:hover{
+	background: white;
+	color:black;
+	border-radius: 2px;
+}
+.wrapper .welcome{
+	position: absolute;
+	left: 55%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-family: sans-serif;
+	user-select: none;
+}
+.welcome h1{
+	color: black;
+	font-size: 50px;
+	width: 870px;
+	font-weight: bold;
+	text-align: center;
+	margin: 0 0 20px -216px;
+}
+.welcome h2{
+	color: black;
+	font-size: 30px;
+	font-weight: lighter;
+	margin-top: 10px;
+	width: 885px;
+	text-align: left;
+	margin: -15px 0 0 0;
+}
